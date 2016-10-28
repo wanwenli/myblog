@@ -1,3 +1,16 @@
 ---
-layout: index
+layout: default
+title: Salmon says
 ---
+{% for post in site.posts %}
+<div class="card">
+    <div class="card-content">
+        <span class="card-title grey-text text-darken-4">{{ post.title }}</span>
+	    <p>{{ post.date | date_to_string }}</p>
+	    <p>{{ post.excerpt }}</p>
+    </div>
+    <div class="card-action">
+        <a href="{{ post.url }}">Read more</a>
+    </div>
+</div>
+{% endfor %}
