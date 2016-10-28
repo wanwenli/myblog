@@ -1,0 +1,15 @@
+---
+layout: default
+title: Categories
+---
+<ul class="collection with-header">
+{% for category in site.categories %}
+    <li class="collection-item">
+        {{ category[0] }}&nbsp;
+        <span class="badge">{{ category[1].size }}</span>
+    </li>
+    {% for post in category[1] %}
+        <a class="collection-item" href="{{ post.url }}">{{ post.title }}</a>
+    {% endfor %}
+{% endfor %}
+</ul>
