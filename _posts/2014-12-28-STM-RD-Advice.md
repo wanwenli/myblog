@@ -6,6 +6,7 @@ category: programming
 ---
 
 ##### Introduction & Disclaimer
+
 STM (Starter Mission) is the training program for
 new employees of
 [Works Applications Co., Ltd.](http://www.worksap.com/)
@@ -30,7 +31,7 @@ It never guarantees your success in STM.
 The author is not responsible for any failure
 because of taking the advice in this article.
 
-##### Maintain a good quality of source code 
+##### Maintain a good quality of source code
 Perhaps you have not programmed for months before STM and
 you want to pass STM as soon as possible.
 However these are not excuses to sacrifice your
@@ -38,7 +39,7 @@ code quality for faster development.
 Believe me that you will probably spend more time
 due to poor code quality.
 
-##### Think about the five principles 
+##### Think about the five principles
 
 You may have heard of the SOLID principles,
 which are
@@ -76,28 +77,32 @@ of exactly one feature, e.g., _UserController_.
 In addition,
 input validation and page redirection methods
 should be separated from controllers as well.
+Some people believe that the input validation logic should be bounded to each entity,
+such that the data inside an entity is consistent wherever it is used.
 
 ##### Build up UI from components
+
 Break down one page into different components and reuse them.
 It saves you lots of time and greatly improves the maintainability of your UI.
 [This](http://www.tutorialspoint.com/jsf/jsf_facelets_tags.htm)
 simple tutorial will help you decompose your UI.
 
 ##### SQL builder (optional)
+
 Write a SQL builder (wrapper) to generate SQL strings.
 It does not save you lots of time,
 but it improves maintainability of your SQL.
 
 ##### Dictionary generator (optional)
+
 If you need to implement a dictionary feature,
 consider writing a program to automatically generate dictionary insertion SQL.
 
-##### Intuitive system design
-
 ##### What is a merit?
+
 You need to be very clear on this principle since the beginning of STM:
 
-Not every feature is a merit.
+**Not every feature is a merit.**
 
 Some features are necessary for daily business operation.
 Merits are always related to benefits.
@@ -120,6 +125,7 @@ Take the leave-application system for example:
 * What is the advantage of my system over writing leaves on paper?
 
 ##### Is the UI intuitive to use?
+
 Since you have stared at your system for a very long time,
 you should be very familiar with it.
 But the customer who use your system may not be.
@@ -144,7 +150,8 @@ just because it looks nice.
 Simplicity has its value.
 
 ##### Robust testing using test cases
-Your system is expected to be without bug
+
+Your system is expected to be bug free
 because nobody wants to buy a buggy product.
 
 Write down test cases to systematically test your system.
@@ -157,6 +164,7 @@ run unit test for Util classes.
 Learn to use debug mode instead of printing messages into console.
 
 ##### Clear catalog: show how your system flows
+
 My personal suggestion for your catalog is to
 write use cases to demonstrate at least one complete flow of your system.
 
@@ -168,7 +176,8 @@ employee takes the leave ->
 employee returns to work later than expected ->
 manager updates the employee`s leave record
 
-##### Conclusion
+##### Summary
+
 STM is not meant to fail you.
 It is designed to equip you with
 essential knowledge and skills for future work.
