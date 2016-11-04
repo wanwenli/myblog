@@ -2,7 +2,7 @@
 layout: post
 title: Thoughts on Consumer Group of Apache Kafka
 excerpt: Simple experiences from the usage of consumer group in production
-category: programming
+category: kafka
 ---
 
 #### Introduction
@@ -11,7 +11,7 @@ The concept of consumer group is intriguring.
 According to the
 [official documentation of Kafka](http://kafka.apache.org/documentation.html#introduction),
 one of its main objectives is to achieve message multicast and broadcast.
-Often it is not an easy concept to understand for newbies.
+Often it is not an easy concept to grasp at the very beginning.
 This article will share a few issues and discoveries about consumer group.
 
 A good way to start understanding consumer group is
@@ -31,7 +31,7 @@ when the topics within a consumer group have new partitions.
 
 Consumer ID uniquely identitfies a consumer.
 It is generated automatically when a consumer is launched.
-The source code of its generation is defined in [ZookeeperConsumerConnector.scala](https://github.com/apache/kafka/blob/trunk/core/src/main/scala/kafka/consumer/ZookeeperConsumerConnector.scala)
+The source code of its generation is defined in [ZookeeperConsumerConnector](https://github.com/apache/kafka/blob/trunk/core/src/main/scala/kafka/consumer/ZookeeperConsumerConnector.scala)
 and shown below.
 
 {% highlight scala %}
@@ -61,11 +61,9 @@ You may use the instructions from [this link](https://cwiki.apache.org/confluenc
 to verify the result of consumer rebalance.
 This tool should work well because I have fixed a bug in `VerifyConsumerRebalance.scala` in [this pull request](https://github.com/apache/kafka/pull/1612).
 
-#### Group coordinator (coordinated rebalance)
-
-This section is my humble and shallow understanding about
-broker coordinator on consumer groups.
-Correct me if I ever miss something or make any mistake.
+Since version 0.9.0,
+Kafka has used *brokers* to coordinate the rebalance process of consumers.
+I also have thought about it and then wrote this blog.
 
 #### Broadcast
 
@@ -87,7 +85,7 @@ shall be accumulated in `/consumers` node and
 most of them are not in use.
 A direct result is
 it is almost impossible to list out all the consumer groups.
-ZooKeeper client throws runtime exception due to buffer overflow due to
+ZooKeeper client throws runtime exception because the buffer overflows due to
 the overwhelming amount of child nodes.
 The error message is something like:
 
@@ -101,7 +99,7 @@ before your patience runs out is extremely low.
 I have encountered a situation where `/consumers` has more than 90,000
 child nodes and was unable to list up consumer groups ever since.
 Another direct result is that some features of [ConsumerGroupCommand](https://github.com/apache/kafka/blob/trunk/core/src/main/scala/kafka/admin/ConsumerGroupCommand.scala)
-(used in kafka-consumer-groups.sh)
+(used in `kafka-consumer-groups.sh`)
 will fail because internally it lists out all consumer groups.
 
 However, the huge number of consumer groups should *not* be a problem
@@ -112,7 +110,7 @@ consumer rebalance is coordinated by brokers,
 brokers do not scan groups when deciding which broker coordinates
 which subset of them.
 They only manage those consumer which join or leave them.
-As far as what I have read from [GroupCoordinator.scala](https://github.com/apache/kafka/blob/trunk/core/src/main/scala/kafka/coordinator/GroupCoordinator.scala),
+As far as what I have read from [GroupCoordinator](https://github.com/apache/kafka/blob/trunk/core/src/main/scala/kafka/coordinator/GroupCoordinator.scala),
 brokers do not scan all consumer groups.
 
 Next, `UUID` is hardly queryable.
@@ -140,9 +138,10 @@ Do it only when you are 100% sure that
 the target group will never be reused.
 
 From version 0.9.0 onward,
-`ConsumerGroupCommand.scala` includes a feature to remove consumer groups.
-Nevertheless, it prohibits the removal of **active** consumer group by
+[ConsumerGroupCommand](https://github.com/apache/kafka/blob/trunk/core/src/main/scala/kafka/admin/ConsumerGroupCommand.scala)
+introduces a feature to remove consumer groups.
+Nevertheless, it prohibits the removal of *active* consumer group by
 checking the number of children under consuemr registry dicrectory
 (i.e., `/consumers/[group_name]/ids`).
-When you remove a consumer group by a ZooKeeper client,
-you should take notice of active consumers as well.
+When you wish to remove a consumer group by a ZooKeeper client,
+please take notice of active consumers as well.
