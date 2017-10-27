@@ -1,7 +1,7 @@
 name: Salmon Blog
 markdown: kramdown
 highlighter: rouge
-destination: /home/wenli/Develop/WorkSpace/swwl1992.github.io
+destination: ~/Develop/WorkSpace/swwl1992.github.io
 
 author:
   name: Simon Wan Wenli
