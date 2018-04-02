@@ -7,7 +7,7 @@ category: kafka
 
 This article is to discuss two subjects
 that are not frequently or clearly covered by official document or
-online souces.
+online sources.
 
 #### Offset topic (the `__consumer_offsets` topic)
 

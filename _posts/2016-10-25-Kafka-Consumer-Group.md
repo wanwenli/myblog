@@ -18,7 +18,7 @@ A good way to start understanding consumer group is
 looking at its data structure within ZooKeeper,
 which is illustrated below.
 
-![Your browser does not support img](/img/consumer-group-zk.png){: .responsive-img }
+![Your browser does not support img](/assets/images/consumer-group-zk.png){: .responsive-img }
 
 You may see each consumer group as a separated world in terms of message consumption.
 Each consuemr group maintains its own consumer ID's,
