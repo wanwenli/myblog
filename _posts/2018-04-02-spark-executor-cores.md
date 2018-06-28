@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Spark's number of cores rethought
+title: Apache Spark's number of cores rethought
 excerpt: From an infrastructural perspective, what do the number of executors and cores actually mean?
 category: spark
 ---
