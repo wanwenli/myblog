@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Why I used Jekyll-bootstrap instead of Octopress"
-category: programming
-excerpt: My bad experience with Octopress
+categories: programming
+description: My bad experience with Octopress
 ---
 I was amazed by the beautiful blog made by my friend.
 He suggested me use `Octopress` or `Jekyll`.

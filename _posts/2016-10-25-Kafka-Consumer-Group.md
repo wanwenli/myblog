@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Thoughts on Consumer Group of Apache Kafka
-excerpt: Simple experiences from the usage of consumer group in production
-category: kafka
+description: Simple experiences from the usage of consumer group in production
+categories: kafka
 ---
 
 #### Introduction

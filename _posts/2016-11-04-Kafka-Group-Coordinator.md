@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Offset topic and consumer group coordinator of Kafka
-excerpt: An attempted understanding from source code and limited documentation
-category: kafka
+description: An attempted understanding from source code and limited documentation
+categories: kafka
 ---
 
 This article is to discuss two subjects

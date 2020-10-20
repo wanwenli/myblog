@@ -15,7 +15,7 @@ destination: /Users/wenli.wan/Develop/swwl1992.github.io
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com' and baseurl as '/child'
-url: http://wanwenli.com
+url: https://wanwenli.com
 # baseurl:
 # permalink: pretty
 
@@ -57,7 +57,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      comments: true
+      comments: false
 
 # Atom feed
 feed:
@@ -119,8 +119,8 @@ index_with_subtitle: false
 menu:
   home: /
   categories: /categories/
+  archives: /archives/
   # about: /about/
-  # archives: /archives/
   # tags: /tags/
   # sitemap: /sitemap.xml
   # commonweal: /404.html
@@ -151,8 +151,8 @@ menu_icons:
 # ---------------------------------------------------------------
 
 # Schemes
-scheme: Muse
-#scheme: Mist
+#scheme: Muse
+scheme: Mist
 #scheme: Pisces
 
 
@@ -216,6 +216,10 @@ font:
 #social:
   #LinkLabel: Link
 
+social:
+  GitHub: https://github.com/wanwenli
+  Twitter: https://twitter.com/wenli_wan
+
 
 # Social Links Icons
 # Icon Mapping:
@@ -228,7 +232,6 @@ social_icons:
   # KeyMapsToSocialItemKey: NameOfTheIconFromFontAwesome
   GitHub: github
   Twitter: twitter
-  Weibo: weibo
 
 
 # Sidebar Avatar
@@ -380,8 +383,8 @@ han: false
 
 # Disqus
 disqus:
-  enable: false
-  shortname:
+  enable: true
+  shortname: wanwenli
   count: true
   # hide comments (visitors need to click to load the comments)
   # count need to be false when hide is true

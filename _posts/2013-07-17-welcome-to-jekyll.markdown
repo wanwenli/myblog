@@ -1,8 +1,8 @@
 ---
 layout: post
 title:	Welcome to Jekyll
-excerpt: An introduction to Jekyll application.
-category: programming
+description: An introduction to Jekyll application.
+categories: programming
 ---
 
 You'll find this post in your `_posts` directory - edit this post and re-build (or run with the `-w` switch) to see your changes!

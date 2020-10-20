@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Ocaml React package tutorial"
-excerpt: Unofficial tutorial for Ocaml React package
-category: programming
+description: Unofficial tutorial for Ocaml React package
+categories: programming
 ---
 
 React is an Ocaml package made for [reactive programming](http://en.wikipedia.org/wiki/Reactive_programming)
@@ -205,7 +205,7 @@ The output would be 1 2 6 24.
 val select : 'a React.event list -> 'a React.event
 {% endhighlight %}
 select el is the occurrences of every event in el.
-If more than one event occurs simultaneously the leftmost is taken and the others are lost. 
+If more than one event occurs simultaneously the leftmost is taken and the others are lost.
 
 {% highlight ocaml %}
 let w, send_w = E.create ()
@@ -287,10 +287,11 @@ val fl : int React.signal -> int React.signal -> int React.signal = <fun>
 {% endhighlight %}
 
 ##### Some other examples
+
 * [Clock.ml](https://github.com/dbuenzli/react/blob/master/test/clock.ml)
 * [Breakout.ml](https://github.com/dbuenzli/react/blob/master/test/breakout.ml)
 * [Oreo project](https://github.com/swwl1992/oreo) Ocaml Reactive programming used on Web authored by me
 
 <a href="http://www.reactivemanifesto.org/">
 <img style="border: 0; position: fixed; left: 0; top:0; z-index: 9000" src="http://www.reactivemanifesto.org/images/ribbons/we-are-reactive-black-left.png">
-</a> 
+</a>

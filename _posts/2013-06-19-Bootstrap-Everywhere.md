@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Bootstrap, bootstrap everywhere"
-category: programming
-excerpt: Some thoughts with bootstrap framework.
+categories: programming
+description: Some thoughts with bootstrap framework.
 ---
 In layman's terms,
 bootstrap is a CSS and Javascript framework designed to

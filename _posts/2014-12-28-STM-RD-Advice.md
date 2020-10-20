@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Advice for STM R&D Assignments
-excerpt: Some guidelines that will help you
-category: programming
+description: Some guidelines that will help you
+categories: programming
 ---
 
 ##### Introduction & Disclaimer

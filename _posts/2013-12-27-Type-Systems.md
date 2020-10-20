@@ -1,18 +1,18 @@
 ---
 layout: post
-title: Differences between type systems of Ocaml & Java
-excerpt: Some research done for my final year project
-category: programming
+title: Differences between type systems of OCaml & Java
+description: Some research done for my final year project
+categories: programming
 ---
 
 ##### Introduction
 
-When asked the differences between the Ocaml's type system and Java's,
+When asked the differences between the OCaml's type system and Java's,
 I realized that I did not understand them well.
 Therefore, I did some research about these two type systems and
 posted the result as this blog.
 
-##### Ocaml Type System
+##### OCaml Type System
 
 The ML languages are statically and strictly typed.
 In addition, every expression has exactly one type.
@@ -23,7 +23,7 @@ whether the coercion makes sense or not.
 What is "safety"?
 There is a formal definition based on the operational semantics of
 the programming language,
-but an approximte definition is that a valid program will never fault
+but an approximate definition is that a valid program will never fault
 because of an invalid machine operation.
 All memory access will be valid.
 ML guarantees safety by proving that every program that
@@ -32,10 +32,10 @@ Another functional language,
 Lisp which is dynamically and strictly typed,
 guarantees its safety by checking for validity at run time.
 One of the consequences is that ML has no `nil` or `NULL` values.
-These values would potentially cause mechine errors if used
+These values would potentially cause machine errors if used
 where a value is expected.
 
-An Ocaml programmer may initially spend a lot of time getting the Ocaml
+An OCaml programmer may initially spend a lot of time getting the OCaml
 type checker to accept his programs.
 But eventually
 he will find the type checker is one of his best friends.
@@ -53,21 +53,21 @@ here are some rules about type checking.
 	* it may not terminate,
 	* it may exit.
 
-One of the important points in Ocaml is that
+One of the important points in OCaml is that
 there are no "pure commands".
 Every assignment produce a value
 - although the value has the trivial `unit` type.
-Below let us see some examples of how Ocaml type system works:
+Below let us see some examples of how OCaml type system works:
 
 {% highlight ocaml linenos %}
-	if 1 < 2 then
-		1
-	else
-		1.3
+if 1 < 2 then
+  1
+else
+  1.3
 {% endhighlight %}
 
 When compiling the code,
-the compilor would tell you there is a type error on line 4,
+the compiler would tell you there is a type error on line 4,
 characters 3-6. This is because the type checker requires that
 both branches of the conditional statement have the same type
 no matter how the test turns out.
@@ -75,6 +75,7 @@ Since the expressions `1` and `1.3` have different types,
 the type checker generates an error.
 
 ##### A Strong Static Language: Java
+
 Java is considered one of the most static languages,
 but it implemented a comprehensive reflection API which
 allows you to change classes at run time,
@@ -100,22 +101,23 @@ such as JavaScript, Python and Ruby, are becoming more and more popular
 in recent years.
 
 ##### What are their differences?
+
 Anyway,
 there is no stronger or weaker type system between these two systems.
-Ocaml and Java are both to static and strong typing languages.
+OCaml and Java are both static and strongly typed languages.
 They both have primitive, array and class types.
-(The standard ML language does not support class types but 
+(The standard ML language does not support class types but
 Objective-caml does.)
-However Java and Ocaml do have some differences in their type systems.
-Ocaml is a functional language and
+However Java and OCaml do have some differences in their type systems.
+OCaml is a functional language and
 a function can be passed as a argument,
 known as higher order functions.
 The type of a function is defined by both its input and output type.
 For example in the chunck of code below,
 
 {% highlight ocaml linenos %}
-	let square x = x * x;
-	val square : int -> int = <fun>
+let square x = x * x;
+val square : int -> int = <fun>
 {% endhighlight %}
 
 `square` is a function that takes an integer and returns an integer.
@@ -126,37 +128,37 @@ In Java higher order function is usually done by
 wrapping the function within an interface as below:
 
 {% highlight java linenos %}
-  public int methodToPass() {
-		// do something
-	}
+public int methodToPass() {
+	// do something
+}
 
-	public void dansMethod(int i, Callable<Integer> myFunc) {
-		// do something
-	}
+public void dansMethod(int i, Callable<Integer> myFunc) {
+	// do something
+}
 {% endhighlight %}
 
 then use a inner class to call the method `methodToPass` as shown below:
 
 {% highlight java linenos %}
-  dansMethod(100, new Callable<Integer>() {
-		public Integer call() {
-			return methodToPass();
-		}
-	});
+dansMethod(100, new Callable<Integer>() {
+	public Integer call() {
+		return methodToPass();
+	}
+});
 {% endhighlight %}
 
-Next, pattern matching is something unique to Ocaml compared to Java.
+Next, pattern matching is something unique to OCaml compared to Java.
 A similar feature in Java is perhaps `switch` statement.
 However it does not have many things to do with type system.
 {% highlight ocaml linenos %}
-	let rec sigma f = function
-		| [] -> 0
-		| x :: l -> f x + sigma f l;;
-	val sigma : ('a -> int) -> 'a list -> int = <fun>
+let rec sigma f = function
+	| [] -> 0
+	| x :: l -> f x + sigma f l;;
+val sigma : ('a -> int) -> 'a list -> int = <fun>
 {% endhighlight %}
 
 Last but not the least,
-type inference is a major difference between Ocaml and Java type systems.
+type inference is a major difference between OCaml and Java type systems.
 Most conventional static typing languages require programmers to restate the types of expressions.
 For example,
 the following Java code instantiates a method to increment an integer by 1.
@@ -165,7 +167,7 @@ int succ (int n) {
     return n + 1;
 }
 {% endhighlight %}
-In OCaml, all programs can be written such that the types they use are competely inferred, i.e.
+In OCaml, all programs can be written such that the types they use are completely inferred, i.e.
 it is never necessary to explicitly define and declare types in OCaml.
 However, defining important types in a program is a good way to leverage static type checking by providing machine-checked documentation,
 improving error reporting and tightening the type system to catch more errors.
@@ -181,5 +183,5 @@ The inference was based upon the use of the integer operator + and the integer l
 ##### Conclusion
 
 In summary,
-the type system of Java has lots of similarities compared to Ocaml.
+the type system of Java has lots of similarities compared to OCaml.
 Still Java is one of the dominant and most popular programming languages.

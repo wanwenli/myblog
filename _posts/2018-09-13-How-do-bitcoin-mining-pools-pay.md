@@ -1,8 +1,8 @@
 ---
 layout: post
 title: How do Bitcoin mining pools pay their miners?
-excerpt: Insights of a data analytics project with onchain examples
-category: blockchain
+description: Insights of a data analytics project with onchain examples
+categories: blockchain
 ---
 
 Since the price of Bitcoin surged in the 2017 Q4,
