@@ -6,12 +6,12 @@
 # Site
 title: Salmon Says
 subtitle:
-description:
+description: Keep talking
 author: Wan Wenli
 # Support language: de, en, fr-FR, id, ja, ko, pt-BR, pt, ru, zh-Hans, zh-hk, zh-tw
 language: en
 date_format: '%Y-%m-%d'
-destination: /Users/wenli.wan/Develop/swwl1992.github.io
+destination: /Users/wenli.wan/Develop/wanwenli.github.io
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com' and baseurl as '/child'
@@ -57,7 +57,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      comments: false
+      comments: true
 
 # Atom feed
 feed:
@@ -385,7 +385,7 @@ han: false
 disqus:
   enable: true
   shortname: wanwenli
-  count: true
+  count: false
   # hide comments (visitors need to click to load the comments)
   # count need to be false when hide is true
   hide: false

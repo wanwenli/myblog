@@ -1,18 +1,18 @@
 ---
 layout: post
-title: "Ocaml React package tutorial"
-description: Unofficial tutorial for Ocaml React package
+title: "OCaml React package tutorial"
+description: Unofficial tutorial for OCaml React package
 categories: programming
 ---
 
-React is an Ocaml package made for [reactive programming](http://en.wikipedia.org/wiki/Reactive_programming)
-using Ocaml.
+React is an OCaml package made for [reactive programming](http://en.wikipedia.org/wiki/Reactive_programming)
+using OCaml.
 The objective of this post is to illustrate and explain some examples of the React API.
 Therefore the basic concepts of React, such as Signals, Events and side effects, will not be repeated here.
 Below are some prerequisites for reading this post.
 
-* [Ocaml](http://ocaml.org/) (version 4.00.1 or above)
-* [OPAM](http://opam.ocamlpro.com/) (Ocaml PAckage Manager)
+* [OCaml](http://ocaml.org/) (version 4.00.1 or above)
+* [OPAM](http://opam.ocamlpro.com/) (OCaml PAckage Manager)
 * React (installation via OPAM)
 * [React Introduction](http://erratique.ch/software/react/doc/React.html)
 
@@ -24,6 +24,7 @@ contact me through my Github account.
 Thank you for your feedbacks.
 
 ##### Using React package
+
 For compilation
 
 ```
@@ -31,7 +32,7 @@ ocamlfind ocamlopt -o clock -linkpkg \
     -package react clock.ml
 ```
 
-For Ocaml Toplevel
+For OCaml Toplevel
 
 ```
 #use "topfind";;
@@ -55,11 +56,12 @@ let () = List.iter send_w [0; 1; 2; 3]
 {% endhighlight %}
 
 The output would be only 0.
-All the values after the first occurence are omitted.
+All the values after the first occurrence are omitted.
 
 {% highlight ocaml %}
 val drop_once : 'a React.event -> 'a React.event
 {% endhighlight %}
+
 drop_once e is e without its next occurrence.
 Similarly, if we change the third line of the example above,
 the output would be 123.
@@ -68,6 +70,7 @@ The reason is because the NEXT occurrence of e is omitted.
 {% highlight ocaml %}
 val app : ('a -> 'b) React.event -> 'a React.event -> 'b React.event
 {% endhighlight %}
+
 app ef e occurs when both ef and e occur simultaneously.
 
 {% highlight ocaml %}
@@ -271,7 +274,7 @@ Note that only updates that change the value of a signal are printed.
 Many API are similar to those in React.E.
 Therefore this tutorial jumps straight to Lifting combinators.
 Lifting transforms a regular function to make it act on signals.
-For examples, l2 takes a function with two arguments as its input.
+For example, l2 takes a function with two arguments as its input.
 
 {% highlight ocaml %}
 val l2 : ?eq:('c -> 'c -> bool) ->
@@ -290,8 +293,4 @@ val fl : int React.signal -> int React.signal -> int React.signal = <fun>
 
 * [Clock.ml](https://github.com/dbuenzli/react/blob/master/test/clock.ml)
 * [Breakout.ml](https://github.com/dbuenzli/react/blob/master/test/breakout.ml)
-* [Oreo project](https://github.com/swwl1992/oreo) Ocaml Reactive programming used on Web authored by me
-
-<a href="http://www.reactivemanifesto.org/">
-<img style="border: 0; position: fixed; left: 0; top:0; z-index: 9000" src="http://www.reactivemanifesto.org/images/ribbons/we-are-reactive-black-left.png">
-</a>
+* [Oreo project](https://github.com/swwl1992/oreo) OCaml Reactive programming used on Web authored by me
