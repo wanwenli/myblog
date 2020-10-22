@@ -3,6 +3,8 @@ layout: post
 title: Apache Spark's number of cores rethought
 description: From an infrastructural perspective, what do the number of executors and cores actually mean?
 categories: spark
+tags:
+- spark
 ---
 
 There are tons of articles talking about setting the number of executors and cores for [Spark](http://spark.apache.org/) applications.

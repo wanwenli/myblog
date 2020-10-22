@@ -3,6 +3,9 @@ layout: post
 title: A brief guide to Bitcoin lightning network with examples
 description: Technical details, source code and discussion about online resources
 categories: blockchain
+tags:
+- blockchain
+- bitcoin
 ---
 
 Why another post about the lightning network (LN) of Bitcoin?

@@ -3,6 +3,9 @@ layout: post
 title: "OCaml React package tutorial"
 description: Unofficial tutorial for OCaml React package
 categories: programming
+tags:
+- programming
+- ocaml
 ---
 
 React is an OCaml package made for [reactive programming](http://en.wikipedia.org/wiki/Reactive_programming)

@@ -3,6 +3,9 @@ layout: post
 title: Differences between type systems of OCaml & Java
 description: Some research done for my final year project
 categories: programming
+tags:
+- programming
+- ocaml
 ---
 
 ##### Introduction

@@ -6,7 +6,7 @@
 # Site
 title: Salmon Says
 subtitle:
-description: Keep talking
+description: Stay curious and keep asking questions
 author: Wan Wenli
 # Support language: de, en, fr-FR, id, ja, ko, pt-BR, pt, ru, zh-Hans, zh-hk, zh-tw
 language: en
@@ -36,7 +36,7 @@ paginate: 10
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "Gemfile", "Gemfile.lock", "README_en.md"]
 
 # Separator
-#excerpt_separator: <!-- more -->
+excerpt_separator: <!-- more -->
 
 # Code Highlighter
 ## 'pygments' is unsupported on GitHub Pages now.
@@ -120,8 +120,8 @@ menu:
   home: /
   categories: /categories/
   archives: /archives/
+  tags: /tags/
   # about: /about/
-  # tags: /tags/
   # sitemap: /sitemap.xml
   # commonweal: /404.html
 
@@ -218,6 +218,7 @@ font:
 
 social:
   GitHub: https://github.com/wanwenli
+  LinkedIn: https://www.linkedin.com/in/wanwenli/
   Twitter: https://twitter.com/wenli_wan
 
 
@@ -231,6 +232,7 @@ social_icons:
   # Icon Mappings.
   # KeyMapsToSocialItemKey: NameOfTheIconFromFontAwesome
   GitHub: github
+  LinkedIn: linkedin
   Twitter: twitter
 
 

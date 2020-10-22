@@ -3,6 +3,10 @@ layout: post
 title: Advice for STM R&D Assignments
 description: Some guidelines that will help you
 categories: programming
+tags:
+- programming
+- life
+- career
 ---
 
 ##### Introduction & Disclaimer
